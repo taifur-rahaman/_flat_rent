@@ -1,6 +1,6 @@
 # Implementing the Design
 
-class Bill:
+class Rent:
     """
     Object that contains data about a bill, such as the total amount and the period of the bill
     """
@@ -16,12 +16,13 @@ class Flatmate:
     flatmate stayed in the flat, the *rent* of the flat by the day stayed in the flat
     """
 
-    def __init__(self, days, name):
-        self.days = days
+    def __init__(self, name, days):
         self.name = name
+        self.days = days
 
-    def rent(self, bill):
-        pass
+    def rent(self, rent, other_flatmate):
+        weight = self.days / (self.days + other_flatmate.days)
+        return rent * weight
 
 
 class PDF_Report:
@@ -33,6 +34,5 @@ class PDF_Report:
     def __init__(self, fileName):
         self.fileName = fileName
 
-    def generate(self, *flatmate, bill):
+    def generate(self, flatmate_1, flatmate_2, bill):
         pass
-    
