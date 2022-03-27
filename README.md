@@ -11,12 +11,28 @@
 
 <h3>Objects</h3>
 <hr>
-    Development-Hack: Figure out the nouns in the description of the application.
+**Development-Hack: Figure out the nouns in the description of the application.
 
-        Nouns:
-            1. App - App object doesn't make sense
-            2. Amount - Amount is an attribute of the Bill
-            3. Bill - Object
-            4. Period - 
-            5. Days
-            6. Rent
+    Nouns:
+        1. App - App object doesn't make sense
+        2. Amount - An attribute of the Bill
+        3. Bill - Object
+        4. Period - An attribute of the Bill
+        5. Days - An attribute of the Flatmate
+        6. Flatmate - Object
+        7. Rent - A method of the Flatmate of Bill(amount)
+        8. Name - An attribute of the Flatmate
+        9. PDF - Object
+
+Object Design:
+    
+    Bill:
+        amount
+        period
+    Flatmate:
+        days
+        name
+        rent(Bill)
+    PDF:
+        fileName
+        generate(Flatmate, Bill)
