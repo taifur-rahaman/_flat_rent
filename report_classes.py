@@ -2,6 +2,7 @@
 import webbrowser
 from fpdf import FPDF
 import os
+from filestack import Client
 
 
 class PDF_Report:
@@ -48,6 +49,19 @@ class PDF_Report:
         pdf.cell(w=cell_width, h=cell_height, txt=flatmate_2.name)
         pdf.cell(w=cell_width, h=cell_height, txt=flatmate_2_rent, ln=1)
 
+        # changed directory to resources/files from _flat_rent
         os.chdir("resources/pdf/")
         pdf.output(self.fileName)
         webbrowser.open(self.fileName)
+
+
+class File_Share:
+
+    def __init__(self, file_path, api_key="AjMDEkbWrTAiDyJSl1UiXz"):
+        self.file_path = file_path
+        self.api_key = api_key
+
+    def share(self):
+        client = Client(apikey=self.api_key)
+        file_link = client.upload(filepath=self.file_path)
+        return file_link.url
