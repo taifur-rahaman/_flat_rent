@@ -1,6 +1,7 @@
 # Imports
 import webbrowser
 from fpdf import FPDF
+import os
 
 
 class PDF_Report:
@@ -47,6 +48,6 @@ class PDF_Report:
         pdf.cell(w=cell_width, h=cell_height, txt=flatmate_2.name)
         pdf.cell(w=cell_width, h=cell_height, txt=flatmate_2_rent, ln=1)
 
+        os.chdir("resources/pdf/")
         pdf.output(self.fileName)
-
         webbrowser.open(self.fileName)
