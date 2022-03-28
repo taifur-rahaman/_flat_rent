@@ -1,5 +1,5 @@
 # import
-from classes import Rent, Flatmate
+from classes import Rent, Flatmate, PDF_Report
 
 # Rent info input
 rent_amount = float(input("Enter the total Rent amount: "))
@@ -24,7 +24,11 @@ total_rent = Rent(amount=rent_amount, period=rent_period)
 flatmate_1 = Flatmate(name=name_1, days=days_1)
 flatmate_2 = Flatmate(name=name_2, days=days_2)
 
+pdf_report = PDF_Report(f"{total_rent.period}.pdf")
+pdf_report.generate(flatmate_1=flatmate_1, flatmate_2=flatmate_2, rent=total_rent)
+
 print(
     f"{flatmate_1.name} stayed {flatmate_1.days} Days and have to pay {flatmate_1.rent(rent=total_rent.amount, other_flatmate=flatmate_2):0.2f} BDT")
 print(
-    f"{flatmate_2.name} stayed {flatmate_2.days} Days and have to pay {flatmate_2.rent(rent=total_rent.amount, other_flatmate=flatmate_1):0.2f} BDT")
+    f"{flatmate_2.name} stayed {flatmate_2.days} Days and have to pay "
+    f"{flatmate_2.rent(rent=total_rent.amount, other_flatmate=flatmate_1):0.2f} BDT")
