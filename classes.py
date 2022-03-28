@@ -60,7 +60,9 @@ class PDF_Report:
         # Insert Period label and Value
         pdf.set_font(family="Times", size=14, style="B")
         pdf.cell(w=cell_width, h=cell_height, txt="Period")
-        pdf.cell(w=cell_width, h=cell_height, txt=rent.period, ln=1)
+        pdf.cell(w=cell_width, h=cell_height, txt=rent.period)
+        pdf.cell(w=cell_width, h=cell_height, txt="Total Rent: ")
+        pdf.cell(w=cell_width, h=cell_height, txt=str(rent.amount), ln=1)
 
         # Insert name and due amount
         # Flatmate 1
