@@ -1,4 +1,4 @@
-<h1 style="text-align: center">Flat Rent</h1>
+<h1 align="center">Flat Rent</h1>
 
 <h3>Description</h3>
 <hr>
