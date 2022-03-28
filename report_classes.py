@@ -56,7 +56,9 @@ class PDF_Report:
 
 
 class File_Share:
-
+    """
+    Object that share the PDF files through API from *file stack*
+    """
     def __init__(self, file_path, api_key="AjMDEkbWrTAiDyJSl1UiXz"):
         self.file_path = file_path
         self.api_key = api_key
