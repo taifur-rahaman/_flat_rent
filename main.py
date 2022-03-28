@@ -1,5 +1,6 @@
 # import
-from classes import Rent, Flatmate, PDF_Report
+from calc_classes import Rent, Flatmate
+from report_classes import PDF_Report
 
 # Rent info input
 rent_amount = float(input("Enter the total Rent amount: "))
